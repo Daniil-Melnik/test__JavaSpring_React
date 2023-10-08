@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Simple Java program to connect to MySQL database running on localhost and
@@ -41,10 +42,10 @@ public class DataBase {
         try { con.close(); } catch(SQLException se) { /*can't do anything */ }
     }
 
-    public static Iterable<Auto> getAutos() {
+    public static List<Auto> getAutos() {
         GetDBConnection();
         String query = "select * from auto";
-        ArrayList<Auto> ar_auto = new ArrayList<>();
+        List<Auto> ar_auto = new ArrayList<>();
         try {
             stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
