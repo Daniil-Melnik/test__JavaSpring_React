@@ -19,9 +19,7 @@ public class StudentController {
 
 	@PostMapping("/add")
     public String add(@RequestBody Auto auto){
-		System.out.println("QQQQQQQQQQQQ");
-		System.out.println(auto.getName() + " " + auto.getComand() + " " + auto.getDiscription());
-		System.out.println("QQQQQQQQQQQQ");
+		// System.out.println(auto.getName() + " " + auto.getComand() + " " + auto.getDiscription());
 		DataBase.addAuto(auto);
         return "New student is added";
     }
